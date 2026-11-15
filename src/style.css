@@ -32,6 +32,10 @@ body {
 h1 {
     margin-left: 5vh;
   }
+
+.hidden {
+  display: none;
+}
   
 #topRow {
     display: grid;

@@ -4,9 +4,23 @@ document.querySelector("#app").innerHTML = `
 <main>
      <h1> Split Focus </h1>
      
-     <button id="settings"></button>
+     <button id="settings">⚙️</button>
      
-     <div class="hidden" id="settingspopup"></div>
+     <div class="hidden" id="settingspopup">
+     
+     <label for="focusDur"> Focus Duration </label>
+     <input id="focusDur" type="number" value=25 min=1 max=60>
+     
+     <label for="shortBr"> Short Break </label>
+     <input id= "shortBr" type="number" value=5 min=1 max=60>
+
+     <label for="longBr"> Long Break </label>
+     <input id= "longBr" type="number" value=20 min=1 max=60>
+
+     <label for="lBrInt"> Long Break Interval </label>
+     <input id="lBrInt" type="number" value=4 min=1 max=10>
+
+     </div>
 
      <section id="topRow">
                
@@ -223,4 +237,12 @@ newTaskBtn.addEventListener("click", () => {
      } else {
           return
      }
+})
+
+
+const settingsBtn = document.querySelector("#settings")
+const settingsPop = document.querySelector("#settingspopup")
+
+settingsBtn.addEventListener("click", () => {
+     settingsPop.classList.toggle("hidden")
 })
