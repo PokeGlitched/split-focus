@@ -12,5 +12,9 @@ document.querySelector("#app").innerHTML = `
                <section id="distractions"> 
                     <h2> Distractions </h2> 
                </section>
+
+               <section id="tasks"> 
+                    <h2> Tasks </h2> 
+               </section>
 </main>
 ` 

@@ -14,8 +14,9 @@
   * {
     box-sizing: border-box;
   }
+  }
 
-  body {
+body {
     margin: 0;
     min-height: 100vh;
     background-color: var(--bg);
@@ -23,7 +24,35 @@
     font-family: var(--sans);
   }
 
-  h1 {
+h1 {
     margin-left: 5vh;
   }
-}
+  
+#dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+#dashboard > section {
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #f5f4ef;
+  }
+
+#dashboard #focus {
+    border: 1px solid #7E8A7B;
+    background-color: #a4b99d;
+  }
+
+#dashboard #distractions {
+    border: 1px solid #C25647;
+    background-color: #d68e85;
+  }
+
+#dashboard #tasks {
+    border: 1px solid #50544D;
+    background-color: #83897E;
+    grid-column: 1/3;
+  }
