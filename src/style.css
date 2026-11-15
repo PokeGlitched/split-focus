@@ -22,4 +22,8 @@
     color: var(--text);
     font-family: var(--sans);
   }
+
+  h1 {
+    margin-left: 5vh;
+  }
 }
