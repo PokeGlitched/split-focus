@@ -33,6 +33,12 @@ h1 {
     margin-left: 5vh;
   }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 #settings {
   border: none;

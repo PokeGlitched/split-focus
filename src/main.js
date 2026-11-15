@@ -3,12 +3,8 @@ import './style.css'
 document.querySelector("#app").innerHTML = `
 <main>
 
-
+     <header>
      <h1> Split Focus </h1>
-     
-     <button id="settings">
-     <img src="src/assets/settings.svg">
-     </button>
      
      <div class="hidden" id="settingspopup">
      
@@ -25,7 +21,13 @@ document.querySelector("#app").innerHTML = `
      <input id="lBrInt" type="number" value=4 min=1 max=10>
 
      </div>
+     
+     <button id="settings">
+     <img src="src/assets/settings.svg">
+     </button>
+     
 
+     </header>
      <section id="topRow">
                
                <section id="focus"> 
