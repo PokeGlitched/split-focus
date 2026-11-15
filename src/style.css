@@ -128,7 +128,38 @@ h1 {
 #bottomRow #tasks {
     border: 1px solid #4C555B;
     background-color: #747D83;
+    position: relative;
   }
+
+#bottomRow #tasks button {
+    border: 1px solid #4C555B;
+    background-color: #747D83;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
+#bottomRow #tasks input {
+    border: 1px solid #4C555B;
+    background-color: #747D83;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
+#specTask::placeholder {
+  color: var(--text);
+}
+
+#bottomRow #tasks h6 {
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 550;
+    position: absolute;
+    top: -15px;
+    right: 10px;
+  }
+
 
 #bottomRow #distHist {
     border: 1px solid #4B4943;

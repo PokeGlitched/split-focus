@@ -23,7 +23,7 @@ document.querySelector("#app").innerHTML = `
           </section>
           <section id="bottomRow"> 
                <section id="tasks"> 
-                    <h6 id="taskNumber> 0 </h6>
+                    <h6 id="taskNumber"> 0 </h6>
                     <h2> Tasks </h2> 
                     <button id="addTask"> Add Task </button>
                     <input id="specTask" type="Text" placeholder="Enter a task!"></input>
@@ -116,4 +116,27 @@ clearBtn.addEventListener("click", () => {
      distractions.length = 0
      distractionCount = 0
      distractionCountDisplay.textContent = distractionCount
+})
+
+
+const taskCount = document.querySelector("#taskNumber")
+const taskInput = document.querySelector("#specTask")
+const newTaskBtn = document.querySelector("#addTask")
+const allTasks = document.querySelector("#taskList")
+let taskCountNumber = 0
+let tasks = []
+
+newTaskBtn.addEventListener("click", () => {
+     let currentTask = (taskInput.value).trim()
+     if (currentTask !== ""){
+          taskCountNumber += 1
+          taskCount.textContent = taskCountNumber
+          tasks.push(currentTask)
+          let newTask = document.createElement("li")
+          newTask.textContent = currentTask
+          allTasks.appendChild(newTask)
+          taskInput.value = ""
+     } else {
+          return
+     }
 })
