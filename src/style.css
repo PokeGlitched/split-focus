@@ -33,6 +33,24 @@ h1 {
     margin-left: 5vh;
   }
 
+
+#settings {
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#settings img {
+  border: none;
+  background: transparent;
+  width: 24px;
+  height: 24px;
+}
+
 .hidden {
   display: none;
 }
