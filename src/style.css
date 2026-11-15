@@ -107,7 +107,20 @@ h1 {
     right: 10px;
   }
 
-#topRow #tasks {
+#bottomRow {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 16px;
+  }
+
+#bottomRow > section {
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #f5f4ef;
+  }
+
+#bottomRow #tasks {
     border: 1px solid #50544D;
     background-color: #83897E;
     grid-column: 1/3;
