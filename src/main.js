@@ -12,6 +12,7 @@ document.querySelector("#app").innerHTML = `
                     <p id="timerDisplay"> 25:00 </p>
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
+                    <button id="clearTimer"> Clear </button>
                </section>
                
                <section id="distractions"> 
@@ -50,8 +51,18 @@ function pauseTimer() {
      timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
 }
 
+function clearTimer() {
+     clearInterval(intervalID)
+     intervalID = undefined
+     timeLeft = 25*60
+     timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
+}
+
 const startBtn = document.querySelector("#startTimer")
 startBtn.addEventListener("click", startTimer)
 
 const pauseBtn = document.querySelector("#pauseTimer")
 pauseBtn.addEventListener("click", pauseTimer)
+
+const clearBtn = document.querySelector("#clearTimer")
+clearBtn.addEventListener("click", clearTimer)
