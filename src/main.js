@@ -131,24 +131,24 @@ if (savedTasks !== null) {
 }
 
 for (let i = 0; i < tasks.length; i++) {
-          console.log(tasks)
-          if (tasks[i].completed === false) {
+     const taskData = tasks[i]
+          if (taskData.completed === false) {
                     taskCountNumber += 1
                }
           taskCount.textContent = taskCountNumber
           let taskElement = document.createElement("li")
           let taskText = document.createElement("span")
-          taskText.textContent = tasks[i].text
+          taskText.textContent = taskData.text
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
-          newTask.checked = tasks[i].completed
-          tasks[i].completed = newTask.checked
-          taskText.classList.toggle("completed", tasks[i].completed)
+          newTask.checked = taskData.completed
+          taskData.completed = newTask.checked
+          taskText.classList.toggle("completed", taskData.completed)
           newTask.addEventListener("change", () => {
                taskText.classList.toggle("completed", newTask.checked)
-               tasks[i].completed = newTask.checked
+               taskData.completed = newTask.checked
                localStorage.setItem("tasks", JSON.stringify(tasks))
-               if (tasks[i].completed === false) {
+               if (taskData.completed === false) {
                     taskCountNumber += 1
                } else {
                     taskCountNumber -= 1
@@ -158,13 +158,13 @@ for (let i = 0; i < tasks.length; i++) {
           let delBtn = document.createElement("button")
           delBtn.textContent = "X"
           delBtn.addEventListener("click", () => {
-               if (tasks[i].completed === false) {
+               if (taskData.completed === false) {
                     taskCountNumber -= 1
                }
                taskCount.textContent = taskCountNumber
                
                taskElement.remove()
-               tasks.splice(i, 1)
+               tasks.splice(tasks.indexOf(taskData), 1)
                localStorage.setItem("tasks", JSON.stringify(tasks))
           })
           taskElement.appendChild(newTask)
@@ -178,8 +178,8 @@ newTaskBtn.addEventListener("click", () => {
      if (currentTask !== ""){
           taskCountNumber += 1
           taskCount.textContent = taskCountNumber
-          tasks.push({text: currentTask, completed: false})
-          const taskIndex = tasks.length - 1
+          const taskData = {text: currentTask, completed: false}
+          tasks.push(taskData)
           localStorage.setItem("tasks", JSON.stringify(tasks))
           let taskElement = document.createElement("li")
           let taskText = document.createElement("span")
@@ -187,7 +187,7 @@ newTaskBtn.addEventListener("click", () => {
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
           newTask.addEventListener("change", () => {
-               tasks[taskIndex].completed = newTask.checked
+               tasks[taskData.completed] = newTask.checked
                taskText.classList.toggle("completed", newTask.checked)
                localStorage.setItem("tasks", JSON.stringify(tasks))
                
@@ -201,12 +201,12 @@ newTaskBtn.addEventListener("click", () => {
           let delBtn = document.createElement("button")
           delBtn.textContent = "X"
           delBtn.addEventListener("click", () => {
-               if (tasks[taskIndex].completed === false) {
+               if (tasks[taskData].completed === false) {
                     taskCountNumber -= 1
                }
                taskCount.textContent = taskCountNumber
                taskElement.remove()
-               tasks.splice(taskIndex, 1)
+               tasks.splice(taskData, 1)
                localStorage.setItem("tasks", JSON.stringify(tasks))
 
           })
