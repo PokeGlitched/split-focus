@@ -37,7 +37,6 @@ time.addEventListener("input", () => {
      }
 })
 
-
 function startTimer() {
      if (intervalID) {
           return
@@ -77,3 +76,13 @@ pauseBtn.addEventListener("click", pauseTimer)
 
 const clearBtn = document.querySelector("#clearTimer")
 clearBtn.addEventListener("click", clearTimer)
+
+let distractionCount = 0
+const distractionCountDisplay = document.querySelector("#distractionNumber")
+const distractionInput = document.querySelector("#specDist")
+const logBtn = document.querySelector("#logDist") 
+logBtn.addEventListener("click", () => {
+     let currentDist = distractionInput.value
+     distractionCount += 1
+     distractionCountDisplay.textContent = distractionCount
+})
