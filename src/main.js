@@ -132,6 +132,9 @@ if (savedTasks !== null) {
 
 for (let i = 0; i < tasks.length; i++) {
           console.log(tasks)
+          if (tasks[i].completed === false) {
+                    taskCountNumber += 1
+               }
           taskCount.textContent = taskCountNumber
           let taskElement = document.createElement("li")
           let taskText = document.createElement("span")
@@ -145,7 +148,6 @@ for (let i = 0; i < tasks.length; i++) {
                taskText.classList.toggle("completed", newTask.checked)
                tasks[i].completed = newTask.checked
                localStorage.setItem("tasks", JSON.stringify(tasks))
-
                if (tasks[i].completed === false) {
                     taskCountNumber += 1
                } else {
@@ -199,9 +201,10 @@ newTaskBtn.addEventListener("click", () => {
           let delBtn = document.createElement("button")
           delBtn.textContent = "X"
           delBtn.addEventListener("click", () => {
-               if (tasks[i].completed === false) {
+               if (tasks[taskIndex].completed === false) {
                     taskCountNumber -= 1
                }
+               taskCount.textContent = taskCountNumber
                taskElement.remove()
                tasks.splice(taskIndex, 1)
                localStorage.setItem("tasks", JSON.stringify(tasks))
