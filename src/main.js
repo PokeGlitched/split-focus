@@ -78,11 +78,17 @@ const clearBtn = document.querySelector("#clearTimer")
 clearBtn.addEventListener("click", clearTimer)
 
 let distractionCount = 0
+let distractions = []
 const distractionCountDisplay = document.querySelector("#distractionNumber")
 const distractionInput = document.querySelector("#specDist")
 const logBtn = document.querySelector("#logDist") 
 logBtn.addEventListener("click", () => {
-     let currentDist = distractionInput.value
-     distractionCount += 1
-     distractionCountDisplay.textContent = distractionCount
+     let currentDist = (distractionInput.value).trim()
+     if (currentDist !== ""){
+          distractionCount += 1
+          distractionCountDisplay.textContent = distractionCount
+          distractions.push(currentDist)
+     } else {
+          return
+     }
 })
