@@ -88,7 +88,6 @@ pauseBtn.addEventListener("click", pauseTimer)
 const resetBtn = document.querySelector("#resetTimer")
 resetBtn.addEventListener("click", clearTimer)
 
-let shownDistHist = document.querySelector("#distHist")
 let trueDistList = document.querySelector("#distList")
 let distractionCount = 0
 let distractions = []
@@ -125,9 +124,24 @@ const newTaskBtn = document.querySelector("#addTask")
 const allTasks = document.querySelector("#taskList")
 let taskCountNumber = 0
 let tasks = []
+let savedTasks = localStorage.getItem("tasks")
 
-if (localStorage.getItem(tasks) !== null) {
-     localStorage.setItem("tasks", JSON.stringify(tasks))
+if (savedTasks !== null) {
+     tasks = JSON.parse(savedTasks)
+}
+
+for (let i = 0; i < tasks.length; i++) {
+     let currentTask = tasks[i]
+          taskCountNumber += 1
+          taskCount.textContent = taskCountNumber
+          let taskElement = document.createElement("li")
+          let taskText = document.createElement("span")
+          taskText.textContent = currentTask
+          let newTask = document.createElement("input")
+          newTask.type = "checkbox"
+          taskElement.appendChild(newTask)
+          taskElement.appendChild(taskText)
+          allTasks.appendChild(taskElement)
 }
 
 newTaskBtn.addEventListener("click", () => {
