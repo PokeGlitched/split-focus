@@ -126,12 +126,17 @@ const allTasks = document.querySelector("#taskList")
 let taskCountNumber = 0
 let tasks = []
 
+if (localStorage.getItem(tasks) !== null) {
+     localStorage.setItem("tasks", JSON.stringify(tasks))
+}
+
 newTaskBtn.addEventListener("click", () => {
      let currentTask = (taskInput.value).trim()
      if (currentTask !== ""){
           taskCountNumber += 1
           taskCount.textContent = taskCountNumber
           tasks.push(currentTask)
+          localStorage.setItem("tasks", JSON.stringify(tasks))
           let taskElement = document.createElement("li")
           let taskText = document.createElement("span")
           taskText.textContent = currentTask
