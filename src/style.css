@@ -10,11 +10,11 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
-
-  * {
+ }
+ * {
     box-sizing: border-box;
   }
-  }
+  
 
 body {
     margin: 0;
@@ -109,7 +109,7 @@ h1 {
 
 #bottomRow {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
 
@@ -123,5 +123,4 @@ h1 {
 #bottomRow #tasks {
     border: 1px solid #50544D;
     background-color: #83897E;
-    grid-column: 1/3;
   }
