@@ -147,8 +147,16 @@ for (let i = 0; i < tasks.length; i++) {
                tasks[i].completed = newTask.checked
                localStorage.setItem("tasks", JSON.stringify(tasks))
           })
+          let delBtn = document.createElement("button")
+          delBtn.textContent = "X"
+          delBtn.addEventListener("click", () => {
+               taskElement.remove()
+               tasks.splice(tasks[i], 1)
+               localStorage.setItem("tasks", JSON.stringify(tasks))
+          })
           taskElement.appendChild(newTask)
           taskElement.appendChild(taskText)
+          taskElement.appendChild(delBtn)
           allTasks.appendChild(taskElement)
 }
 
@@ -170,8 +178,16 @@ newTaskBtn.addEventListener("click", () => {
                taskText.classList.toggle("completed", newTask.checked)
                localStorage.setItem("tasks", JSON.stringify(tasks))
           })
+          let delBtn = document.createElement("button")
+          delBtn.textContent = "X"
+          delBtn.addEventListener("click", () => {
+               taskElement.remove()
+               tasks.splice(taskIndex, 1)
+               localStorage.setItem("tasks", JSON.stringify(tasks))
+          })
           taskElement.appendChild(newTask)
           taskElement.appendChild(taskText)
+          taskElement.appendChild(delBtn)
           allTasks.appendChild(taskElement)
           taskInput.value = ""
      } else {
