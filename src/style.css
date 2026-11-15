@@ -62,6 +62,12 @@ h1 {
     font-weight: 250;
   }
 
+#dashboard #focus p {
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 550;
+  }
+
 #dashboard #distractions {
     border: 1px solid #C25647;
     background-color: #d68e85;
