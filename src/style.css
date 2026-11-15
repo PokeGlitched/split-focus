@@ -160,6 +160,11 @@ h1 {
     right: 10px;
   }
 
+#taskList {
+  list-style: none;
+  text-align: left;
+}
+
 
 #bottomRow #distHist {
     border: 1px solid #4B4943;

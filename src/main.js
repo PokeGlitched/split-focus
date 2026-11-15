@@ -133,10 +133,12 @@ newTaskBtn.addEventListener("click", () => {
           taskCount.textContent = taskCountNumber
           tasks.push(currentTask)
           let taskElement = document.createElement("li")
-          taskElement.textContent = currentTask
+          let taskText = document.createElement("span")
+          taskText.textContent = currentTask
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
           taskElement.appendChild(newTask)
+          taskElement.appendChild(taskText)
           allTasks.appendChild(taskElement)
           taskInput.value = ""
      } else {
