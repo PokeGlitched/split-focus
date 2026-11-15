@@ -156,6 +156,9 @@ newTaskBtn.addEventListener("click", () => {
           taskText.textContent = currentTask
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
+          newTask.addEventListener("change", () => {
+               taskText.classList.toggle("completed", newTask.checked)
+          })
           taskElement.appendChild(newTask)
           taskElement.appendChild(taskText)
           allTasks.appendChild(taskElement)

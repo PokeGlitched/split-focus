@@ -165,6 +165,10 @@ h1 {
   text-align: left;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 
 #bottomRow #distHist {
     border: 1px solid #4B4943;
