@@ -46,6 +46,22 @@ h1 {
     background-color: #a4b99d;
   }
 
+#dashboard #focus button {
+    border: 1px solid #7E8A7B;
+    background-color: #a4b99d;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
+#dashboard #focus input {
+    border: 1px solid #7E8A7B;
+    background-color: #a4b99d;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
 #dashboard #distractions {
     border: 1px solid #C25647;
     background-color: #d68e85;

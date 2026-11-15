@@ -1,6 +1,4 @@
 import './style.css'
-let timeLeft = 25*60
-
 
 document.querySelector("#app").innerHTML = `
 <main>
@@ -13,6 +11,7 @@ document.querySelector("#app").innerHTML = `
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
                     <button id="clearTimer"> Clear </button>
+                    <input id="timeWanted" type="number" value=25 min=1 max=60></input> 
                </section>
                
                <section id="distractions"> 
@@ -22,10 +21,18 @@ document.querySelector("#app").innerHTML = `
                <section id="tasks"> 
                     <h2> Tasks </h2> 
                </section>
-</main>
-` 
-let intervalID
+</main>`
+
 const timerDisplay = document.querySelector("#timerDisplay")
+let intervalID
+let time = document.querySelector("#timeWanted")
+let timeLeft = Number(time.value)*60
+time.addEventListener("input", () => {
+     if (!intervalID) {
+          timeLeft = Number(time.value)*60
+          timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
+     }
+})
 
 
 function startTimer() {
@@ -38,6 +45,7 @@ function startTimer() {
                timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
           } else {
                timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
+               intervalID = undefined
                clearInterval(intervalID)
           }
      }, 1000) 
@@ -54,7 +62,7 @@ function pauseTimer() {
 function clearTimer() {
      clearInterval(intervalID)
      intervalID = undefined
-     timeLeft = 25*60
+     timeLeft = Number(time.value)*60
      timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
 }
 
