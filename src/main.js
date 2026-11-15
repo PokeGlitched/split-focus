@@ -4,7 +4,9 @@ document.querySelector("#app").innerHTML = `
 <main>
      <h1> Split Focus </h1>
      
-     <button id="settings">⚙️</button>
+     <button id="settings">
+     <img src="src/assets/settings.svg">
+     </button>
      
      <div class="hidden" id="settingspopup">
      
