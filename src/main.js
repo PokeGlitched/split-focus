@@ -10,7 +10,7 @@ document.querySelector("#app").innerHTML = `
                     <p id="timerDisplay"> 25:00 </p>
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
-                    <button id="clearTimer"> Clear </button>
+                    <button id="resetTimer"> Reset </button>
                     <input id="timeWanted" type="number" value=25 min=1 max=60></input> 
                </section>
                
@@ -27,6 +27,7 @@ document.querySelector("#app").innerHTML = `
                </section>
                <section id="distHist"> 
                     <h2> Distraction History </h2> 
+                    <button id="clearHist"> Clear </button>
                     <ul id="distList"></ul>
                </section>
           </section>
@@ -80,8 +81,8 @@ startBtn.addEventListener("click", startTimer)
 const pauseBtn = document.querySelector("#pauseTimer")
 pauseBtn.addEventListener("click", pauseTimer)
 
-const clearBtn = document.querySelector("#clearTimer")
-clearBtn.addEventListener("click", clearTimer)
+const resetBtn = document.querySelector("#resetTimer")
+resetBtn.addEventListener("click", clearTimer)
 
 let shownDistHist = document.querySelector("#distHist")
 let trueDistList = document.querySelector("#distList")
@@ -105,3 +106,10 @@ logBtn.addEventListener("click", () => {
      }
 })
 
+const clearBtn = document.querySelector("#clearHist") 
+clearBtn.addEventListener("click", () => {
+     trueDistList.textContent = ""
+     distractions.length = 0
+     distractionCount = 0
+     distractionCountDisplay.textContent = distractionCount
+})

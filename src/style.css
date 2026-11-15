@@ -134,3 +134,11 @@ h1 {
     border: 1px solid #4B4943;
     background-color: #77736A;
   }
+
+#bottomRow #distHist button {
+    border: 1px solid #4B4943;
+    background-color: #77736A;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
