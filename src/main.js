@@ -7,7 +7,7 @@ document.querySelector("#app").innerHTML = `
      <h1> Split Focus </h1>
      
      <div class="hidden" id="settingspopup">
-     <div id="settingspanel">
+     <div class="hidden" id="settingspanel">
     
      <label for="focusDur"> Focus Duration </label>
      <input id="focusDur" type="number" value=25 min=1 max=60>
