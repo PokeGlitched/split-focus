@@ -48,8 +48,8 @@ function startTimer() {
                timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
           } else {
                timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
-               intervalID = undefined
                clearInterval(intervalID)
+               intervalID = undefined
           }
      }, 1000) 
           
