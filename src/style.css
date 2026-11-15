@@ -167,6 +167,7 @@ h1 {
 
 .completed {
     text-decoration: line-through;
+    color: #b6b5b1;
 }
 
 
