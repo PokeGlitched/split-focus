@@ -45,8 +45,8 @@ function startTimer() {
 }
 
 function pauseTimer() {
+     clearInterval(intervalID)
      intervalID = undefined
-     timeLeft = 25*60
      timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
 }
 
