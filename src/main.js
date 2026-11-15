@@ -9,7 +9,8 @@ document.querySelector("#app").innerHTML = `
                
                <section id="focus"> 
                     <h2> Focus </h2>
-                    <p id="timerDisplay"> 0:00 </p> 
+                    <p id="timerDisplay"> 0:00 </p>
+                    <button id="startTimer"> Start </button>
                </section>
                
                <section id="distractions"> 
@@ -27,10 +28,11 @@ const timerDisplay = document.querySelector("#timerDisplay")
 
 function startTimer() {
      intervalID = setInterval (() => {
-          if (timeLeft > 0){
+          if (timeLeft > 1){
                timeLeft -= 1
                timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
           } else {
+               timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
                clearInterval(intervalID)
           }
      }, 1000) 
