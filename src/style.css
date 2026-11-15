@@ -68,11 +68,35 @@ h1 {
     font-weight: 550;
   }
 
+#timeWanted::placeholder {
+  color: var(--text);
+}
+
 #dashboard #distractions {
     border: 1px solid #C25647;
     background-color: #d68e85;
     position: relative;
   }
+
+#dashboard #distractions button {
+    border: 1px solid #C25647;
+    background-color: #d68e85;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
+#dashboard #distractions input {
+    border: 1px solid #C25647;
+    background-color: #d68e85;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
+#specDist::placeholder {
+  color: var(--text);
+}
 
 #dashboard #distractions h6 {
     font-family: var(--sans);
