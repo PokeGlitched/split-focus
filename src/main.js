@@ -7,7 +7,8 @@ document.querySelector("#app").innerHTML = `
      <h1> Split Focus </h1>
      
      <div class="hidden" id="settingspopup">
-     
+     <div id="settingspanel">
+    
      <label for="focusDur"> Focus Duration </label>
      <input id="focusDur" type="number" value=25 min=1 max=60>
      
@@ -19,7 +20,8 @@ document.querySelector("#app").innerHTML = `
 
      <label for="lBrInt"> Long Break Interval </label>
      <input id="lBrInt" type="number" value=4 min=1 max=10>
-
+   
+     </div>
      </div>
      
      <button id="settings">
