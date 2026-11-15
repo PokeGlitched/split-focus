@@ -23,7 +23,11 @@ document.querySelector("#app").innerHTML = `
           </section>
           <section id="bottomRow"> 
                <section id="tasks"> 
+                    <h6 id="taskNumber> 0 </h6>
                     <h2> Tasks </h2> 
+                    <button id="addTask"> Add Task </button>
+                    <input id="specTask" type="Text" placeholder="Enter a task!"></input>
+                    <ul id="taskList"></ul>
                </section>
                <section id="distHist"> 
                     <h2> Distraction History </h2> 
