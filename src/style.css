@@ -15,6 +15,11 @@
     box-sizing: border-box;
   }
   
+main {
+  display: grid;
+  gap: 8px;
+  margin: 8px;
+}
 
 body {
     margin: 0;
@@ -31,7 +36,7 @@ h1 {
 #topRow {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    gap: 16px;
+    gap: 8px;
   }
 
 #topRow > section {
@@ -110,7 +115,7 @@ h1 {
 #bottomRow {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 8px;
   }
 
 #bottomRow > section {
@@ -121,6 +126,11 @@ h1 {
   }
 
 #bottomRow #tasks {
-    border: 1px solid #50544D;
-    background-color: #83897E;
+    border: 1px solid #4C555B;
+    background-color: #747D83;
+  }
+
+#bottomRow #distHist {
+    border: 1px solid #4B4943;
+    background-color: #77736A;
   }

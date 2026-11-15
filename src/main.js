@@ -21,10 +21,14 @@ document.querySelector("#app").innerHTML = `
                     <input id="specDist" type="text" placeholder="Enter the distraction"></input>
                </section>
           </section>
-          <section> id="bottomRow"
+          <section id="bottomRow"> 
                <section id="tasks"> 
                     <h2> Tasks </h2> 
                </section>
+               <section id="distHist"> 
+                    <h2> Distraction History </h2> 
+               </section>
+          </section>
 </main>`
 
 const timerDisplay = document.querySelector("#timerDisplay")
@@ -78,6 +82,7 @@ pauseBtn.addEventListener("click", pauseTimer)
 const clearBtn = document.querySelector("#clearTimer")
 clearBtn.addEventListener("click", clearTimer)
 
+let shownDistHist = document.querySelector("#distHist")
 let distractionCount = 0
 let distractions = []
 const distractionCountDisplay = document.querySelector("#distractionNumber")
@@ -93,3 +98,4 @@ logBtn.addEventListener("click", () => {
           return
      }
 })
+
