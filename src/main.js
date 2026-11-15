@@ -146,12 +146,22 @@ for (let i = 0; i < tasks.length; i++) {
                taskText.classList.toggle("completed", newTask.checked)
                tasks[i].completed = newTask.checked
                localStorage.setItem("tasks", JSON.stringify(tasks))
+
+               if (tasks[i].completed === false) {
+                    taskCountNumber += 1
+               }
+               taskCount.textContent = taskCountNumber
           })
           let delBtn = document.createElement("button")
           delBtn.textContent = "X"
           delBtn.addEventListener("click", () => {
+               if (tasks[i].completed === false) {
+                    taskCountNumber -= 1
+               }
+               taskCount.textContent = taskCountNumber
+               
                taskElement.remove()
-               tasks.splice(tasks[i], 1)
+               tasks.splice(i, 1)
                localStorage.setItem("tasks", JSON.stringify(tasks))
           })
           taskElement.appendChild(newTask)
@@ -177,6 +187,13 @@ newTaskBtn.addEventListener("click", () => {
                tasks[taskIndex].completed = newTask.checked
                taskText.classList.toggle("completed", newTask.checked)
                localStorage.setItem("tasks", JSON.stringify(tasks))
+               
+               if (newTask.checked === true) {
+                    taskCountNumber -= 1
+               } else {
+                    taskCountNumber += 1
+               }
+               taskCount.textContent = taskCountNumber
           })
           let delBtn = document.createElement("button")
           delBtn.textContent = "X"
