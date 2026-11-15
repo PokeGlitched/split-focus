@@ -3,7 +3,12 @@ import './style.css'
 document.querySelector("#app").innerHTML = `
 <main>
      <h1> Split Focus </h1>
-          <section id="topRow">
+     
+     <button id="settings"></button>
+     
+     <div class="hidden" id="settingspopup"></div>
+
+     <section id="topRow">
                
                <section id="focus"> 
                     <h2> Focus </h2>
