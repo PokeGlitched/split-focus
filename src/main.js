@@ -15,7 +15,10 @@ document.querySelector("#app").innerHTML = `
                </section>
                
                <section id="distractions"> 
-                    <h2> Distractions </h2> 
+                    <h6 id="distractionNumber"> 0 <h6>
+                    <h2> Distractions </h2>
+                    <button id="logDist" type="sumbit"></button>
+
                </section>
 
                <section id="tasks"> 

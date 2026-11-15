@@ -71,6 +71,16 @@ h1 {
 #dashboard #distractions {
     border: 1px solid #C25647;
     background-color: #d68e85;
+    position: relative;
+  }
+
+#dashboard #distractions h6 {
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 550;
+    position: absolute;
+    top: -15px;
+    right: 10px;
   }
 
 #dashboard #tasks {
