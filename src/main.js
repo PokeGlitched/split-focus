@@ -136,9 +136,15 @@ for (let i = 0; i < tasks.length; i++) {
           taskCount.textContent = taskCountNumber
           let taskElement = document.createElement("li")
           let taskText = document.createElement("span")
-          taskText.textContent = currentTask
+          taskText.textContent = tasks[i].text
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
+          newTask.checked = tasks[i].completed
+          tasks[i].completed = newTask.checked
+          newTask.addEventListener("change", () => {
+               taskText.classList.toggle("completed", newTask.checked)
+               localStorage.setItem("tasks", JSON.stringify(tasks))
+          })
           taskElement.appendChild(newTask)
           taskElement.appendChild(taskText)
           allTasks.appendChild(taskElement)
@@ -149,7 +155,8 @@ newTaskBtn.addEventListener("click", () => {
      if (currentTask !== ""){
           taskCountNumber += 1
           taskCount.textContent = taskCountNumber
-          tasks.push(currentTask)
+          tasks.push({text: currentTask, completed: false})
+          const taskIndex = tasks.length - 1
           localStorage.setItem("tasks", JSON.stringify(tasks))
           let taskElement = document.createElement("li")
           let taskText = document.createElement("span")
@@ -157,7 +164,9 @@ newTaskBtn.addEventListener("click", () => {
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
           newTask.addEventListener("change", () => {
+               tasks[taskIndex].completed = newTask.checked
                taskText.classList.toggle("completed", newTask.checked)
+               localStorage.setItem("tasks", JSON.stringify(tasks))
           })
           taskElement.appendChild(newTask)
           taskElement.appendChild(taskText)
