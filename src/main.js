@@ -131,7 +131,7 @@ if (savedTasks !== null) {
 }
 
 for (let i = 0; i < tasks.length; i++) {
-     let currentTask = tasks[i]
+          console.log(tasks)
           taskCountNumber += 1
           taskCount.textContent = taskCountNumber
           let taskElement = document.createElement("li")
@@ -141,8 +141,10 @@ for (let i = 0; i < tasks.length; i++) {
           newTask.type = "checkbox"
           newTask.checked = tasks[i].completed
           tasks[i].completed = newTask.checked
+          taskText.classList.toggle("completed", tasks[i].completed)
           newTask.addEventListener("change", () => {
                taskText.classList.toggle("completed", newTask.checked)
+               tasks[i].completed = newTask.checked
                localStorage.setItem("tasks", JSON.stringify(tasks))
           })
           taskElement.appendChild(newTask)
