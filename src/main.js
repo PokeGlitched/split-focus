@@ -7,7 +7,7 @@ document.querySelector("#app").innerHTML = `
      <h1> Split Focus </h1>
      
      <div class="hidden" id="settingspopup">
-     <div class="hidden" id="settingspanel">
+     <div id="settingspanel">
     
      <button id="closeSettings"> × </button>
 
@@ -259,8 +259,13 @@ newTaskBtn.addEventListener("click", () => {
 
 
 const settingsBtn = document.querySelector("#settings")
+const closeBtn = document.querySelector("#closeSettings")
 const settingsPop = document.querySelector("#settingspopup")
 
 settingsBtn.addEventListener("click", () => {
+     settingsPop.classList.toggle("hidden")
+})
+
+closeBtn.addEventListener("click", () => {
      settingsPop.classList.toggle("hidden")
 })

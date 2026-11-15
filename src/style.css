@@ -64,7 +64,7 @@ header {
 } 
 
 #settingspanel button {
-  align-self: right;
+  align-self: flex-end;
 }
 
 #settingspanel input {
@@ -99,7 +99,7 @@ header {
   height: 24px;
 }
 
-.hidden {
+#settingspopup.hidden {
   display: none;
 }
   
