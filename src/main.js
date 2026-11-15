@@ -27,6 +27,7 @@ document.querySelector("#app").innerHTML = `
                </section>
                <section id="distHist"> 
                     <h2> Distraction History </h2> 
+                    <ul id="distList"></ul>
                </section>
           </section>
 </main>`
@@ -83,6 +84,7 @@ const clearBtn = document.querySelector("#clearTimer")
 clearBtn.addEventListener("click", clearTimer)
 
 let shownDistHist = document.querySelector("#distHist")
+let trueDistList = document.querySelector("#distList")
 let distractionCount = 0
 let distractions = []
 const distractionCountDisplay = document.querySelector("#distractionNumber")
@@ -94,6 +96,10 @@ logBtn.addEventListener("click", () => {
           distractionCount += 1
           distractionCountDisplay.textContent = distractionCount
           distractions.push(currentDist)
+          let newDist = document.createElement("li")
+          newDist.textContent = currentDist
+          trueDistList.appendChild(newDist)
+          distractionInput.value = ""
      } else {
           return
      }
