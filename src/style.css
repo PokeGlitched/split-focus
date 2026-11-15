@@ -28,33 +28,25 @@ h1 {
     margin-left: 5vh;
   }
   
-#dashboard {
+#topRow {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 16px;
   }
 
-#dashboard > section {
+#topRow > section {
     border-radius: 8px;
     padding: 16px;
     text-align: center;
     color: #f5f4ef;
   }
 
-#dashboard #focus {
+#topRow #focus {
     border: 1px solid #7E8A7B;
     background-color: #a4b99d;
   }
 
-#dashboard #focus button {
-    border: 1px solid #7E8A7B;
-    background-color: #a4b99d;
-    font-family: var(--sans);
-    color: var(--text);
-    font-weight: 250;
-  }
-
-#dashboard #focus input {
+#topRow #focus button {
     border: 1px solid #7E8A7B;
     background-color: #a4b99d;
     font-family: var(--sans);
@@ -62,7 +54,15 @@ h1 {
     font-weight: 250;
   }
 
-#dashboard #focus p {
+#topRow #focus input {
+    border: 1px solid #7E8A7B;
+    background-color: #a4b99d;
+    font-family: var(--sans);
+    color: var(--text);
+    font-weight: 250;
+  }
+
+#topRow #focus p {
     font-family: var(--sans);
     color: var(--text);
     font-weight: 550;
@@ -72,13 +72,13 @@ h1 {
   color: var(--text);
 }
 
-#dashboard #distractions {
+#topRow #distractions {
     border: 1px solid #C25647;
     background-color: #d68e85;
     position: relative;
   }
 
-#dashboard #distractions button {
+#topRow #distractions button {
     border: 1px solid #C25647;
     background-color: #d68e85;
     font-family: var(--sans);
@@ -86,7 +86,7 @@ h1 {
     font-weight: 250;
   }
 
-#dashboard #distractions input {
+#topRow #distractions input {
     border: 1px solid #C25647;
     background-color: #d68e85;
     font-family: var(--sans);
@@ -98,7 +98,7 @@ h1 {
   color: var(--text);
 }
 
-#dashboard #distractions h6 {
+#topRow #distractions h6 {
     font-family: var(--sans);
     color: var(--text);
     font-weight: 550;
@@ -107,7 +107,7 @@ h1 {
     right: 10px;
   }
 
-#dashboard #tasks {
+#topRow #tasks {
     border: 1px solid #50544D;
     background-color: #83897E;
     grid-column: 1/3;

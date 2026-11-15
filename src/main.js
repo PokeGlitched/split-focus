@@ -3,7 +3,7 @@ import './style.css'
 document.querySelector("#app").innerHTML = `
 <main>
      <h1> Split Focus </h1>
-          <section id="dashboard">
+          <section id="topRow">
                
                <section id="focus"> 
                     <h2> Focus </h2>
@@ -20,7 +20,8 @@ document.querySelector("#app").innerHTML = `
                     <button id="logDist">Log Distraction</button>
                     <input id="specDist" type="text" placeholder="Enter the distraction"></input>
                </section>
-
+          </section>
+          <section> id="bottomRow"
                <section id="tasks"> 
                     <h2> Tasks </h2> 
                </section>
