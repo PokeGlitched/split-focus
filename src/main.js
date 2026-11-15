@@ -9,18 +9,28 @@ document.querySelector("#app").innerHTML = `
      <div class="hidden" id="settingspopup">
      <div class="hidden" id="settingspanel">
     
+     <button id="closeSettings"> × </button>
+
+     <div>
      <label for="focusDur"> Focus Duration </label>
      <input id="focusDur" type="number" value=25 min=1 max=60>
-     
+     </div>
+
+     <div>
      <label for="shortBr"> Short Break </label>
      <input id= "shortBr" type="number" value=5 min=1 max=60>
+     </div>
 
+     <div>
      <label for="longBr"> Long Break </label>
      <input id= "longBr" type="number" value=20 min=1 max=60>
+     </div>
 
+     <div>
      <label for="lBrInt"> Long Break Interval </label>
      <input id="lBrInt" type="number" value=4 min=1 max=10>
-   
+     </div>
+
      </div>
      </div>
      
@@ -183,7 +193,7 @@ for (let i = 0; i < tasks.length; i++) {
                taskCount.textContent = taskCountNumber
           })
           let delBtn = document.createElement("button")
-          delBtn.textContent = "X"
+          delBtn.textContent = "×"
           delBtn.addEventListener("click", () => {
                if (taskData.completed === false) {
                     taskCountNumber -= 1
@@ -226,7 +236,7 @@ newTaskBtn.addEventListener("click", () => {
                taskCount.textContent = taskCountNumber
           })
           let delBtn = document.createElement("button")
-          delBtn.textContent = "X"
+          delBtn.textContent = "×"
           delBtn.addEventListener("click", () => {
                if (tasks[taskData].completed === false) {
                     taskCountNumber -= 1

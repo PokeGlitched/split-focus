@@ -49,6 +49,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 
@@ -56,7 +57,15 @@ header {
     border-radius: 8px;
     padding: 16px;
     background-color: #50544db3;
-}  
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+} 
+
+#settingspanel button {
+  align-self: right;
+}
 
 #settingspanel input {
     border: 1px solid #f5f4ef;
@@ -64,7 +73,14 @@ header {
     font-family: var(--sans);
     color: var(--text);
     font-weight: 250;
+    width: 200px;
   }
+
+#settingspanel div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 #settings {
   border: none;
