@@ -48,7 +48,7 @@ document.querySelector("#app").innerHTML = `
                
                <section id="focus"> 
                     <h2> Focus </h2>
-                    <h3 id="sessionDisplay"> FOCUS SESSION </h3>
+                    <h3 id="sessionDisplay"> FOCUS TIME </h3>
                     <p id="timerDisplay"> 25:00 </p>
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
