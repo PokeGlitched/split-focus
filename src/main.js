@@ -59,6 +59,8 @@ document.querySelector("#app").innerHTML = `
                     <h6 id="distractionNumber"> 0 </h6>
                     <h2> Distractions </h2>
                     <button id="logDist">Log Distraction</button>
+                    <br>
+                    <br>
                     <input id="specDist" type="text" placeholder="Enter the distraction"></input>
                </section>
           </section>
