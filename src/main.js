@@ -290,7 +290,7 @@ newTaskBtn.addEventListener("click", () => {
           let newTask = document.createElement("input")
           newTask.type = "checkbox"
           newTask.addEventListener("change", () => {
-               tasks[taskData.completed] = newTask.checked
+               taskData.completed = newTask.checked
                taskText.classList.toggle("completed", newTask.checked)
                localStorage.setItem("tasks", JSON.stringify(tasks))
                
@@ -304,12 +304,12 @@ newTaskBtn.addEventListener("click", () => {
           let delBtn = document.createElement("button")
           delBtn.textContent = "×"
           delBtn.addEventListener("click", () => {
-               if (tasks[taskData].completed === false) {
+               if (taskData.completed === false) {
                     taskCountNumber -= 1
                }
                taskCount.textContent = taskCountNumber
                taskElement.remove()
-               tasks.splice(taskData, 1)
+               tasks.splice(tasks.indexOf(taskData), 1)
                localStorage.setItem("tasks", JSON.stringify(tasks))
 
           })
