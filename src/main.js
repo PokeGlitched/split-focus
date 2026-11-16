@@ -80,6 +80,23 @@ document.querySelector("#app").innerHTML = `
                     <ul id="distList"></ul>
                </section>
           </section>
+          <section id="infoRow"> 
+               <section id="keyShorts"> 
+                    <h2 id="heading4KS"> Keyboard Shortcuts </h2>
+                    <p> 
+                    Space - (Un)pause Timer <br>
+                    R - Reset Timer <br>
+                    Escape - Toggles Settings
+                    </p>
+               </section>
+               <section id="infoBox"> 
+                    <h2> Info </h2> 
+                    <p>
+                    Welcome to Split Focus - an all-in-one productivity website! This is a minimalistic pomodoro timer without ads for when you want to just study. Log your tasks and distractions so you can easily see what you have to do - and what's stopping you.
+                    Toggle settings in the top-right hand corner. This site is accessible to mobile users. Have fun studying!
+                    </p>
+               </section>
+          </section>
 </main>`
 
 const timerDisplay = document.querySelector("#timerDisplay")
@@ -163,6 +180,25 @@ function clearTimer() {
 
 const startBtn = document.querySelector("#startTimer")
 startBtn.addEventListener("click", startTimer)
+
+document.addEventListener("keydown", (event) => {
+     if (event.key === " " && event.target.tagName !== "INPUT") {
+     if (intervalID) {
+          pauseTimer()
+     } else {
+          startTimer ()
+     }
+     }
+
+     if (event.key === "r" && event.target.tagName !== "INPUT") {
+          clearTimer()
+     } 
+
+     if (event.key === "Escape" && event.target.tagName !== "INPUT") {
+          settingsPop.classList.toggle("hidden")
+     }
+
+})
 
 const pauseBtn = document.querySelector("#pauseTimer")
 pauseBtn.addEventListener("click", pauseTimer)

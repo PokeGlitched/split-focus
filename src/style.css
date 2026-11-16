@@ -273,3 +273,17 @@ header {
 #distList {
   list-style: none;
   }
+
+#infoRow {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 8px;
+}
+
+#infoRow > section {
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #f5f4ef;
+    border: 1px solid #f1e5ab;
+  }
