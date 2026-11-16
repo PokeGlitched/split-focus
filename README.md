@@ -25,4 +25,11 @@ But why choose Split Focus? Many Pomodoro timers across the web are made for pro
 
 **How to Run/Use**
 *Web*
-- Go to 
+- Go to https://pokeglitched.github.io/split-focus/
+
+*LocalHost/Clone*
+- Clone repo
+- Open project folder
+- Install dependencies thru npm(.cmd) install
+- Run npm(.cmd) run dev to get server link
+- Open in browser
