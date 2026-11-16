@@ -216,6 +216,8 @@ clearBtn.addEventListener("click", () => {
      trueDistList.textContent = ""
      distractionCount = 0
      distractionCountDisplay.textContent = distractionCount
+     distractions.length = 0
+     localStorage.setItem("distractions", JSON.stringify(distractions))
 })
 
 
