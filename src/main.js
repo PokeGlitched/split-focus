@@ -48,6 +48,7 @@ document.querySelector("#app").innerHTML = `
                
                <section id="focus"> 
                     <h2> Focus </h2>
+                    <h3 id="sessionDisplay"> FOCUS SESSION </h2>
                     <p id="timerDisplay"> 25:00 </p>
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
@@ -81,13 +82,41 @@ document.querySelector("#app").innerHTML = `
 const timerDisplay = document.querySelector("#timerDisplay")
 let intervalID
 let time = document.querySelector("#timeWanted")
-let timeLeft = Number(time.value)*60
 let sessionType = "focus"
+let sessionText = document.querySelector("#sessionDisplay")
 let completedSessions = 0
 let focusDuration = Number(document.querySelector("#focusDur").value)
 let shortBreak = Number(document.querySelector("#shortBr").value)
 let longBreak = Number(document.querySelector("#longBr").value)
 let longBreakInterval = Number(document.querySelector("#lBrInt").value)
+let timeLeft = focusDuration * 60
+
+function updateSessionDisplay() {
+     if (sessionType === "focus") {
+     sessionText.textContent = "FOCUS TIME"
+} else if (sessionType === "shortBreak") {
+     sessionText.textContent = "SHORT BREAK"
+} else {
+     sessionText.textContent = "LONG BREAK"
+}
+}
+
+function switchSession() {
+     
+     if (sessionType === "focus") {
+     completedSessions += 1
+     if (completedSessions % longBreakInterval == 0) {
+          sessionType = "longBreak"
+     } else {
+          sessionType = "shortBreak"
+     }
+     } else {
+          sessionType = "focus"
+     }
+
+     clearTimer()
+     startTimer()
+}
 
 time.addEventListener("input", () => {
      if (!intervalID) {
@@ -105,9 +134,10 @@ function startTimer() {
                timeLeft -= 1
                timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
           } else {
-               timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
                clearInterval(intervalID)
                intervalID = undefined
+
+               switchSession()
           }
      }, 1000) 
           
@@ -123,7 +153,16 @@ function pauseTimer() {
 function clearTimer() {
      clearInterval(intervalID)
      intervalID = undefined
-     timeLeft = Number(time.value)*60
+     if (sessionType === "focus") {
+          timeLeft = focusDuration * 60
+     } else {
+          if (sessionType === "shortBreak") {
+               timeLeft = shortBreak * 60
+          } else {
+               timeLeft = longBreak * 60
+          }
+     }
+     updateSessionDisplay()
      timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
 }
 
