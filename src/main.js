@@ -53,7 +53,6 @@ document.querySelector("#app").innerHTML = `
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
                     <button id="resetTimer"> Reset </button>
-                    <input id="timeWanted" type="number" value=25 min=1 max=60></input> 
                </section>
                
                <section id="distractions"> 
