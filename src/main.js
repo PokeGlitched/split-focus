@@ -360,6 +360,23 @@ applyChangesBtn.addEventListener("click", () => {
      shortBreak = Number(document.querySelector("#shortBr").value)
      longBreak = Number(document.querySelector("#longBr").value)
      longBreakInterval = Number(document.querySelector("#lBrInt").value)
+     let allPomoSetts = {focusDuration, shortBreak, longBreak, longBreakInterval}
+     localStorage.setItem("allPomoSetts", JSON.stringify(allPomoSetts))
      clearTimer()
      settingsPop.classList.add("hidden")
 })
+
+if (localStorage.getItem("allPomoSetts") !== null) {
+     const savedSettings = JSON.parse(localStorage.getItem("allPomoSetts"))
+     focusDuration = savedSettings.focusDuration
+     shortBreak = savedSettings.shortBreak
+     longBreak = savedSettings.longBreak
+     longBreakInterval = savedSettings.longBreakInterval
+     document.querySelector("#focusDur").value = focusDuration
+     document.querySelector("#shortBr").value = shortBreak
+     document.querySelector("#longBr").value = longBreak
+     document.querySelector("#lBrInt").value = longBreakInterval
+     timeLeft = focusDuration * 60
+     timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
+     }
+     
