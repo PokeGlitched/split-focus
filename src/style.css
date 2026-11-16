@@ -102,6 +102,22 @@ header {
 #settingspopup.hidden {
   display: none;
 }
+
+#applyChanges {
+  background-color: #a4b99d;
+  color: var(--bg);
+  border: 1px solid #7E8A7B;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-family: var(--sans);
+  font-weight: 250;
+  transition: var(--bg) 0.2s ease;
+  width: 100%;
+}
+
+#applyChanges:hover {
+  background-color: #b8cbaf;
+}
   
 #topRow {
     display: grid;

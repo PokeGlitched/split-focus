@@ -31,12 +31,16 @@ document.querySelector("#app").innerHTML = `
      <input id="lBrInt" type="number" value=4 min=1 max=10>
      </div>
 
+     <button id="applyChanges"> Apply Changes </button>
+
      </div>
      </div>
      
      <button id="settings">
      <img src="src/assets/settings.svg">
      </button>
+
+
      
 
      </header>
@@ -78,6 +82,13 @@ const timerDisplay = document.querySelector("#timerDisplay")
 let intervalID
 let time = document.querySelector("#timeWanted")
 let timeLeft = Number(time.value)*60
+let sessionType = "focus"
+let completedSessions = 0
+let focusDuration = Number(document.querySelector("#focusDur").value)
+let shortBreak = Number(document.querySelector("#shortBr").value)
+let longBreak = Number(document.querySelector("#longBr").value)
+let longBreakInterval = Number(document.querySelector("#lBrInt").value)
+
 time.addEventListener("input", () => {
      if (!intervalID) {
           timeLeft = Number(time.value)*60
@@ -261,6 +272,7 @@ newTaskBtn.addEventListener("click", () => {
 const settingsBtn = document.querySelector("#settings")
 const closeBtn = document.querySelector("#closeSettings")
 const settingsPop = document.querySelector("#settingspopup")
+const applyChangesBtn = document.querySelector("#applyChanges")
 
 settingsBtn.addEventListener("click", () => {
      settingsPop.classList.toggle("hidden")
@@ -268,4 +280,13 @@ settingsBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
      settingsPop.classList.toggle("hidden")
+})
+
+applyChangesBtn.addEventListener("click", () => {
+     focusDuration = Number(document.querySelector("#focusDur").value)
+     shortBreak = Number(document.querySelector("#shortBr").value)
+     longBreak = Number(document.querySelector("#longBr").value)
+     longBreakInterval = Number(document.querySelector("#lBrInt").value)
+     clearTimer()
+     settingsPop.classList.add("hidden")
 })
