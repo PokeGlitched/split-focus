@@ -269,3 +269,7 @@ header {
     color: var(--text);
     font-weight: 250;
   }
+
+#distList {
+  list-style: none;
+  }

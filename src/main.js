@@ -169,18 +169,42 @@ resetBtn.addEventListener("click", clearTimer)
 let trueDistList = document.querySelector("#distList")
 let distractionCount = 0
 let distractions = []
+let savedDistractions = localStorage.getItem("distractions")
+
+if (savedDistractions !== null) {
+     distractions = JSON.parse(savedDistractions)
+}
+
 const distractionCountDisplay = document.querySelector("#distractionNumber")
 const distractionInput = document.querySelector("#specDist")
 const logBtn = document.querySelector("#logDist") 
+
+for (let i = 0; i < distractions.length; i++) {
+     let currentDist = distractions[i].text
+     if (currentDist !== ""){
+          distractionCount += 1
+          distractionCountDisplay.textContent = distractionCount
+          let newDist = document.createElement("li")
+          newDist.textContent = currentDist + " — at " + distractions[i].time
+          trueDistList.prepend(newDist)
+     }
+}
+
 logBtn.addEventListener("click", () => {
      let currentDist = (distractionInput.value).trim()
      if (currentDist !== ""){
           distractionCount += 1
+          let currentTime = new Date().toLocaleTimeString([], {
+               hour: "numeric",
+               minute: "2-digit"
+          })
           distractionCountDisplay.textContent = distractionCount
-          distractions.push(currentDist)
           let newDist = document.createElement("li")
-          newDist.textContent = currentDist
-          trueDistList.appendChild(newDist)
+          newDist.textContent = currentDist + " — at " + currentTime
+          trueDistList.prepend(newDist)
+          const distData = {text: currentDist, time: currentTime}
+          distractions.push(distData)
+          localStorage.setItem("distractions", JSON.stringify(distractions))
           distractionInput.value = ""
      } else {
           return
@@ -190,7 +214,6 @@ logBtn.addEventListener("click", () => {
 const clearBtn = document.querySelector("#clearHist") 
 clearBtn.addEventListener("click", () => {
      trueDistList.textContent = ""
-     distractions.length = 0
      distractionCount = 0
      distractionCountDisplay.textContent = distractionCount
 })
