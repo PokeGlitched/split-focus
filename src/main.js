@@ -48,7 +48,7 @@ document.querySelector("#app").innerHTML = `
                
                <section id="focus"> 
                     <h2> Focus </h2>
-                    <h3 id="sessionDisplay"> FOCUS SESSION </h2>
+                    <h3 id="sessionDisplay"> FOCUS SESSION </h3>
                     <p id="timerDisplay"> 25:00 </p>
                     <button id="startTimer"> Start </button>
                     <button id="pauseTimer"> Pause </button>
@@ -80,7 +80,6 @@ document.querySelector("#app").innerHTML = `
 
 const timerDisplay = document.querySelector("#timerDisplay")
 let intervalID
-let time = document.querySelector("#timeWanted")
 let sessionType = "focus"
 let sessionText = document.querySelector("#sessionDisplay")
 let completedSessions = 0
@@ -116,13 +115,6 @@ function switchSession() {
      clearTimer()
      startTimer()
 }
-
-time.addEventListener("input", () => {
-     if (!intervalID) {
-          timeLeft = Number(time.value)*60
-          timerDisplay.textContent = `${Math.floor(timeLeft / 60)}:${String((timeLeft % 60)).padStart(2, "0")}`
-     }
-})
 
 function startTimer() {
      if (intervalID) {
