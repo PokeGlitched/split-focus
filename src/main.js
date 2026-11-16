@@ -70,6 +70,8 @@ document.querySelector("#app").innerHTML = `
                     <h2> Tasks </h2> 
                     <button id="addTask"> Add Task </button>
                     <input id="specTask" type="Text" placeholder="Enter a task!"></input>
+                    <p>       </p>
+                    <button id="clearCompleted"> Clear Completed Tasks </button>
                     <ul id="taskList"></ul>
                </section>
                <section id="distHist"> 
@@ -235,6 +237,7 @@ if (savedTasks !== null) {
      tasks = JSON.parse(savedTasks)
 }
 
+function recieveTasks() {
 for (let i = 0; i < tasks.length; i++) {
      const taskData = tasks[i]
           if (taskData.completed === false) {
@@ -277,6 +280,9 @@ for (let i = 0; i < tasks.length; i++) {
           taskElement.appendChild(delBtn)
           allTasks.appendChild(taskElement)
 }
+}
+
+recieveTasks()
 
 newTaskBtn.addEventListener("click", () => {
      let currentTask = (taskInput.value).trim()
@@ -323,6 +329,16 @@ newTaskBtn.addEventListener("click", () => {
      } else {
           return
      }
+})
+
+const clearTasksBtn = document.querySelector("#clearCompleted")
+
+clearTasksBtn.addEventListener("click", () => {
+     tasks = tasks.filter(taskData => taskData.completed === false)
+     allTasks.textContent = ""
+     taskCountNumber = 0
+     recieveTasks()
+     localStorage.setItem("tasks", JSON.stringify(tasks))
 })
 
 
